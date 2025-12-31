@@ -1,0 +1,48 @@
+ID and Name
+FUNC-REQ-LM-2 Random Word Selection
+Date Created
+9/25
+Primary Actor
+User
+Secondary Actor
+The system
+Description
+The system shall present the user with 10 words randomly selected from a bag of words.
+Trigger
+The user has started the learning mode, and the system needs to display the first word.
+Preconditions
+PRE-FUNC-REQ-LM-2.1 The vocabulary database has been loaded to google spreadsheet and all required fields such as: id, word in Swedish, image path and sound path are in place.
+PRE-FUNC-REQ-LM-2.2 Each element in the vocabulary database is correctly mapped, so the word in Swedish corresponds to the correct image path and sound path.
+Postconditions
+POST-FUNC-REQ-LM-2.2 
+Normal flow
+FUNC-REQ-LM-2: Random Word Selection
+ 
+The user clicks on the button ‘’Learning Mode’’
+The system will choose a random word for the bag of words using the random function from the Javascript’s math library.
+A json file with all the information of the word is presented to the front end.
+Id
+Word in swedish
+Image path
+Sound path
+Learned
+The front end it's able to render the image and presents it to the user in a friendly way according to the game design.
+Alternative flows
+FUNC-REQ-LM-2: Short game session
+
+The user clicks on the button ‘’Learning Mode’’
+If the system cannot select 10 words (e.g., fewer than 10 words available in the database)
+	a. The system displays all available words instead.
+	b. The user is notified: "Only x words available for learning"
+The learning session proceeds with the available words.
+
+
+Exceptions
+FUNC-REQ-LM-2.1/EXCEPTION: No words loaded
+
+The system doesn’t have a vocabulary loaded. The system displays the exception message “Error: No words loaded”
+Diagrams
+
+User Requirement
+REQ-LM-2: Random Word Selection
+
